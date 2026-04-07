@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landingPage" class="page active">
+        <div class="container">
+            <div class="welcome-card">
+                <h1>Student Management System</h1>
+                <p>Welcome to the comprehensive platform for managing students, study materials, and notices</p>
+                <div class="auth-buttons">
+                    <button class="btn btn-primary" onclick="showAuth('faculty')">Faculty Login / Signup</button>
+                    <button class="btn btn-secondary" onclick="showAuth('student')">Student Login / Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Page -->
+    <div id="authPage" class="page">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+                    <button class="tab-btn" onclick="switchTab('signup')">Signup</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form active">
+                    <h2>Login</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginRole">Role</label>
+                            <select id="loginRole" required>
+                                <option value="faculty">Faculty</option>
+                                <option value="student">Student</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <button class="btn btn-back" onclick="showLanding()">Back to Home</button>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" class="auth-form">
+                    <h2>Signup</h2>
+                    <form onsubmit="handleSignup(event)">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input type="text" id="signupName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupRole">Role</label>
+                            <select id="signupRole" required>
+                                <option value="faculty">Faculty</option>
+                                <option value="student">Student</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Signup</button>
+                    </form>
+                    <button class="btn btn-back" onclick="showLanding()">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Dashboard -->
+    <div id="facultyDashboard" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand">
+                <h3>Faculty Dashboard</h3>
+            </div>
+            <div class="nav-user">
+                <span id="facultyName"></span>
+                <button class="btn btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="dashboard-content">
+            <div class="sidebar">
+                <button class="sidebar-btn active" onclick="showSection('uploadMaterial')">Upload Material</button>
+                <button class="sidebar-btn" onclick="showSection('viewMaterials')">View Materials</button>
+                <button class="sidebar-btn" onclick="showSection('noticeForum')">Notice Forum</button>
+            </div>
+            
+            <div class="main-content">
+                <!-- Upload Material Section -->
+                <div id="uploadMaterial" class="content-section active">
+                    <h2>Upload Study Material</h2>
+                    <div class="upload-card">
+                        <form onsubmit="handleMaterialUpload(event)">
+                            <div class="form-group">
+                                <label for="materialTitle">Title</label>
+                                <input type="text" id="materialTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="materialSubject">Subject</label>
+                                <input type="text" id="materialSubject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="materialFile">PDF File</label>
+                                <input type="file" id="materialFile" accept=".pdf" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload Material</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- View Materials Section -->
+                <div id="viewMaterials" class="content-section">
+                    <h2>Uploaded Materials</h2>
+                    <div id="materialsList" class="materials-grid">
+                        <!-- Materials will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Notice Forum Section -->
+                <div id="noticeForum" class="content-section">
+                    <h2>Notice Forum</h2>
+                    <div class="notice-actions">
+                        <button class="btn btn-primary" onclick="showNoticeForm()">Upload Notice</button>
+                    </div>
+                    <div id="noticeForm" class="notice-form hidden">
+                        <form onsubmit="handleNoticeUpload(event)">
+                            <div class="form-group">
+                                <label for="noticeTitle">Title</label>
+                                <input type="text" id="noticeTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="noticeDescription">Description</label>
+                                <textarea id="noticeDescription" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="noticeFile">Attachment (Optional)</label>
+                                <input type="file" id="noticeFile">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Notice</button>
+                            <button type="button" class="btn btn-secondary" onclick="hideNoticeForm()">Cancel</button>
+                        </form>
+                    </div>
+                    <div id="noticesList" class="notices-list">
+                        <!-- Notices will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="studentDashboard" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand">
+                <h3>Student Dashboard</h3>
+            </div>
+            <div class="nav-user">
+                <span id="studentName"></span>
+                <button class="btn btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="dashboard-content">
+            <div class="sidebar">
+                <button class="sidebar-btn active" onclick="showSection('studyMaterials')">Study Materials</button>
+                <button class="sidebar-btn" onclick="showSection('studentNoticeForum')">Notice Forum</button>
+            </div>
+            
+            <div class="main-content">
+                <!-- Study Materials Section -->
+                <div id="studyMaterials" class="content-section active">
+                    <h2>Study Materials</h2>
+                    <div id="studentMaterialsList" class="materials-grid">
+                        <!-- Materials will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Notice Forum Section -->
+                <div id="studentNoticeForum" class="content-section">
+                    <h2>Notice Forum</h2>
+                    <div class="notice-actions">
+                        <button class="btn btn-primary" onclick="showNoticeForm()">Upload Notice</button>
+                    </div>
+                    <div id="studentNoticeForm" class="notice-form hidden">
+                        <form onsubmit="handleNoticeUpload(event)">
+                            <div class="form-group">
+                                <label for="studentNoticeTitle">Title</label>
+                                <input type="text" id="studentNoticeTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentNoticeDescription">Description</label>
+                                <textarea id="studentNoticeDescription" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentNoticeFile">Attachment (Optional)</label>
+                                <input type="file" id="studentNoticeFile">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Notice</button>
+                            <button type="button" class="btn btn-secondary" onclick="hideNoticeForm()">Cancel</button>
+                        </form>
+                    </div>
+                    <div id="studentNoticesList" class="notices-list">
+                        <!-- Notices will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Container -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <!-- Java Implementation Notes -->
+    <!--
+    JAVA (SPRING BOOT) IMPLEMENTATION NOTES:
+    
+    In a real-world implementation, this frontend would connect to a Java Spring Boot backend:
+    
+    1. AUTHENTICATION:
+       - Spring Security with JWT tokens for authentication
+       - User entities with roles (FACULTY, STUDENT)
+       - Password encryption using BCrypt
+       - Session management and token validation
+    
+    2. DATABASE (MySQL):
+       - User table: id, name, email, password, role, created_at
+       - Material table: id, title, subject, file_path, faculty_id, uploaded_at
+       - Notice table: id, title, description, file_path, user_id, created_at
+    
+    3. FILE STORAGE:
+       - Spring Boot File Upload with MultipartFile
+       - Files stored in server directory or cloud storage (AWS S3)
+       - File metadata stored in database
+       - Download endpoints with proper authorization
+    
+    4. REST API ENDPOINTS:
+       - POST /api/auth/login - User authentication
+       - POST /api/auth/signup - User registration
+       - POST /api/materials - Upload study materials (Faculty only)
+       - GET /api/materials - Get all materials (Students)
+       - POST /api/notices - Upload notices (All users)
+       - GET /api/notices - Get all notices (All users)
+       - GET /api/files/download/{id} - Download files
+    
+    5. SECURITY:
+       - Role-based access control (@PreAuthorize)
+       - Input validation and sanitization
+       - File upload restrictions and virus scanning
+       - CORS configuration for frontend communication
+    
+    NOTE: Current implementation is a frontend simulation using localStorage only.
+    -->
+    
+    <script src="script.js"></script>
+</body>
+</html>

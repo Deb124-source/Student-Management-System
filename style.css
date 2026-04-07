@@ -1,0 +1,591 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Page Management */
+.page {
+    display: none;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Landing Page Styles */
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 10vh;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.welcome-card h1 {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.welcome-card p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 200px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(240, 147, 251, 0.3);
+}
+
+.btn-logout {
+    background: #dc3545;
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    min-width: auto;
+}
+
+.btn-logout:hover {
+    background: #c82333;
+}
+
+.btn-back {
+    background: #6c757d;
+    color: white;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background: #5a6268;
+}
+
+/* Authentication Styles */
+.auth-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 10vh;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.auth-form h2 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Dashboard Styles */
+.dashboard-nav {
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-user span {
+    font-weight: 600;
+    color: #333;
+}
+
+.dashboard-content {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+    width: 250px;
+    background: #f8f9fa;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-btn {
+    width: 100%;
+    padding: 15px 25px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-btn:hover {
+    background: #e9ecef;
+    color: #667eea;
+}
+
+.sidebar-btn.active {
+    background: #667eea;
+    color: white;
+    border-left-color: #764ba2;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #f8f9fa;
+    overflow-y: auto;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.content-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* Card Styles */
+.upload-card,
+.material-card,
+.notice-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-card:hover,
+.material-card:hover,
+.notice-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Materials Grid */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.material-card {
+    position: relative;
+}
+
+.material-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.material-card .subject {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.material-card .date {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Notices Styles */
+.notice-actions {
+    margin-bottom: 25px;
+}
+
+.notice-form {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.notice-form.hidden {
+    display: none;
+}
+
+.notices-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notice-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.notice-card .description {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.notice-card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.notice-card .author {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.download-btn {
+    background: #28a745;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-width: auto;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background: #218838;
+}
+
+/* Message System */
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.message {
+    background: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideInRight 0.3s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message.success {
+    border-left: 4px solid #28a745;
+}
+
+.message.error {
+    border-left: 4px solid #dc3545;
+}
+
+.message.info {
+    border-left: 4px solid #17a2b8;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.message-close:hover {
+    color: #333;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .welcome-card {
+        padding: 40px 20px;
+        margin: 5vh 10px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 2rem;
+    }
+    
+    .auth-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .auth-container {
+        margin: 5vh 10px;
+        padding: 30px 20px;
+    }
+    
+    .dashboard-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .sidebar-btn {
+        padding: 12px 20px;
+    }
+    
+    .main-content {
+        padding: 20px 10px;
+    }
+    
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-nav {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-user {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .message-container {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-card h1 {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-card p {
+        font-size: 1rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .upload-card,
+    .notice-form {
+        padding: 20px 15px;
+    }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
