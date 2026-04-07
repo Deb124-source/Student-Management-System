@@ -8,21 +8,21 @@
 ## ✨ Features:
 
 ### 1.🔐 Authentication System
-  1.Role-based login/signup (Student / Faculty)
-  2.Secure credential handling (UI level)
+  1.Role-based login/signup (Student / Faculty)<br>
+  2.Secure credential handling (UI level)<br>
 
 ### 2.📊 Student Dashboard
-  1.Access study materials
-  2.View important notices
+  1.Access study materials<br>
+  2.View important notices<br>
 
 ### 3.👨‍🏫 Faculty Panel
-  1.Upload materials
-  2.Manage notices
+  1.Upload materials<br>
+  2.Manage notices<br>
 
 ### 4.🎨 Modern UI/UX
-  1.Gradient design
-  2.Clean layout
-  3.Smooth navigation
+  1.Gradient design<br>
+  2.Clean layout<br>
+  3.Smooth navigation<br>
 
 ## 🖼️ Project Preview:
 <p align="center"> <img src="Screenshot 2026-04-05 221307.png" width="45%"> <img src="Screenshot 2026-04-05 221439.png" width="45%"> </p> <p align="center"> <img src="Screenshot 2026-04-05 221513.png" width="45%"> <img src="Screenshot 2026-04-05 221906.png" width="45%"> </p>
@@ -39,11 +39,11 @@
    index.html
 
 ## 📈 Future Enhancements:
-🚀 Backend integration using Java (Spring Boot)
-🗄️ Database support (MySQL / MongoDB)
-🔐 JWT Authentication
-📱 Fully responsive mobile UI
-👨‍💼 Admin Dashboard
+🚀 Backend integration using Java (Spring Boot)<br>
+🗄️ Database support (MySQL / MongoDB)<br>
+🔐 JWT Authentication<br>
+📱 Fully responsive mobile UI<br>
+👨‍💼 Admin Dashboard<br>
 
 ## 💡 Project Objective:
    This project demonstrates how a Student Management System can streamline academic workflows by centralizing student data, study materials, and communication.
