@@ -29,7 +29,7 @@ Clean layout
 Smooth navigation
 
 ## 🖼️ Project Preview
-<p align="center"> <img src="./screenshots/home.png" width="45%"> <img src="./screenshots/login.png" width="45%"> </p> <p align="center"> <img src="./screenshots/signup.png" width="45%"> <img src="./screenshots/dashboard.png" width="45%"> </p>
+<p align="center"> <img src="Screenshot 2026-04-05 221307.png" width="45%"> <img src="./screenshots/login.png" width="45%"> </p> <p align="center"> <img src="./screenshots/signup.png" width="45%"> <img src="./screenshots/dashboard.png" width="45%"> </p>
 
 ## 🛠️ Tech Stack
 Technology	Usage
