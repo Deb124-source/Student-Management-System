@@ -7,22 +7,22 @@
 
 ## ✨ Features:
 
-### 🔐 Authentication System
+### 1.🔐 Authentication System
 
 Role-based login/signup (Student / Faculty)
 Secure credential handling (UI level)
 
-### 📊 Student Dashboard
+### 2.📊 Student Dashboard
 
 Access study materials
 View important notices
 
-### 👨‍🏫 Faculty Panel
+### 3.👨‍🏫 Faculty Panel
 
 Upload materials
 Manage notices
 
-### 🎨 Modern UI/UX
+### 4.🎨 Modern UI/UX
 
 Gradient design
 Clean layout
@@ -32,11 +32,11 @@ Smooth navigation
 <p align="center"> <img src="Screenshot 2026-04-05 221307.png" width="45%"> <img src="Screenshot 2026-04-05 221439.png" width="45%"> </p> <p align="center"> <img src="Screenshot 2026-04-05 221513.png" width="45%"> <img src="Screenshot 2026-04-05 221906.png" width="45%"> </p>
 
 ## 🛠️ Tech Stack
-Technology	Usage
-HTML	Structure
-CSS	Styling
-JavaScript	Logic
-Netlify	Deployment
+Technology	Usage<br>
+HTML	Structure<br>
+CSS	Styling<br>
+JavaScript	Logic<br>
+Netlify	Deployment<br>
 
 ## ⚙️ Setup Instructions
 
@@ -62,7 +62,7 @@ index.html
 This project demonstrates how a Student Management System can streamline academic workflows by centralizing student data, study materials, and communication.
 
 ## 🧠 Architecture (Conceptual)
-<p align="center"> <img src="./screenshots/home.png" width="45%">
+<p align="center"> <img src="Structure.png" width="45%">
 
 ## 👨‍💻 Author
 
