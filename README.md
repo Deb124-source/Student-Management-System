@@ -30,7 +30,7 @@
 ## ⚙️ Setup Instructions:
 
 ### 1.Clone the repository:
-   git clone https://github.com/your-username/student-management-system.git
+   git clone https://github.com/Deb124-source/student-management-system.git
 
 ### 2.Go to project folder:
    cd student-management-system
